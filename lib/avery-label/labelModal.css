@@ -1,0 +1,17 @@
+.label{
+	 width: 1.0125in; 
+	 height: .4375in; 
+	 padding: .0625in .15in 0; 
+	 margin-right: .0625in; 
+	 margin-left: .0625in; 
+	 float: left; 
+	 text-align:center; 
+	 overflow: hidden; 
+	 outline: 1px dotted;
+	 outline-color: black;
+}
+
+body .modal-dialog{
+	width: 360px;
+	text-align: center;
+}

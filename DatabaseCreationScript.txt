@@ -1,0 +1,166 @@
+#DROP DATABASE test;
+
+CREATE DATABASE test;
+
+USE test;
+
+CREATE TABLE IF NOT EXISTS itemcategory
+(
+	name VARCHAR(30) PRIMARY KEY
+)ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS item
+(
+	name VARCHAR(30),
+	itemCategory VARCHAR(30),
+	CONSTRAINT FOREIGN KEY (itemCategory) REFERENCES itemcategory(name) ON UPDATE CASCADE,
+	PRIMARY KEY( name, itemCategory ),
+	description VARCHAR(500)
+)ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS searchtag
+(
+	name VARCHAR(30) PRIMARY KEY
+)ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS searchableby
+(
+	itemName VARCHAR(30),
+	CONSTRAINT FOREIGN KEY (itemName) REFERENCES item(name) ON UPDATE CASCADE,
+	itemCategory VARCHAR(30),
+	CONSTRAINT FOREIGN KEY (itemCategory) REFERENCES item(itemCategory) ON UPDATE CASCADE,
+	searchTag VARCHAR(30),
+	CONSTRAINT FOREIGN KEY (searchTag) REFERENCES searchtag(name) ON UPDATE CASCADE,
+	PRIMARY KEY( itemName, itemCategory, searchTag )
+)ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS user
+(
+	800number INT(9) UNIQUE,
+	barcodeNumber BIGINT(16) UNIQUE,
+	selfServe INT(1),
+	name VARCHAR(100),
+	email VARCHAR(100) PRIMARY KEY,
+	phoneNumber VARCHAR(12)
+)ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS individualitem
+(
+	idNumber INT PRIMARY KEY AUTO_INCREMENT,
+	itemCategoryName VARCHAR(30),
+	CONSTRAINT FOREIGN KEY (itemCategoryName) REFERENCES item(itemCategory) ON UPDATE CASCADE,
+	itemName VARCHAR(30),
+	CONSTRAINT FOREIGN KEY (itemName) REFERENCES item(name) ON UPDATE CASCADE
+)ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS note
+(
+	text VARCHAR(300),
+	dateAdded DATE,
+	itemNumber INT,
+	CONSTRAINT FOREIGN KEY (itemNumber) REFERENCES individualitem(idNumber) ON UPDATE CASCADE,
+	PRIMARY KEY( text(100), itemNumber )
+)ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS checkouthistory
+(
+	userEmail VARCHAR(100),
+	CONSTRAINT FOREIGN KEY ( userEmail ) REFERENCES user(email) ON UPDATE CASCADE,
+	itemIDNumber INT,
+	CONSTRAINT FOREIGN KEY (itemIDNumber) REFERENCES individualitem(idNumber) ON UPDATE CASCADE,
+	dateCheckedOut DATE,
+	dateCheckedIn DATE
+)ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS admin
+(
+	800number INT(9) PRIMARY KEY,
+	CONSTRAINT FOREIGN KEY (800number) REFERENCES user(800number) ON UPDATE CASCADE,
+	password VARCHAR (100)
+)ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS building
+(
+	name VARCHAR(100) PRIMARY KEY,
+	abbreviation VARCHAR(5) UNIQUE
+)ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS room
+(
+	number INT,
+	buildingName VARCHAR(100),
+	CONSTRAINT FOREIGN KEY (buildingName) REFERENCES building(name) ON UPDATE CASCADE,
+	PRIMARY KEY( number, buildingName )
+)ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS department
+(
+	name VARCHAR(100) PRIMARY KEY,
+	abbreviation VARCHAR(5) UNIQUE
+)ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS shelfunit
+(
+	idNumber INT,
+	roomIn INT,
+	buildingName VARCHAR(100),
+	CONSTRAINT FOREIGN KEY (roomIn, buildingName) REFERENCES room(number, buildingName) ON UPDATE CASCADE,
+	PRIMARY KEY(idNumber, roomIn, buildingName)
+)ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS shelf
+(
+	number INT,
+	shelfUnitNumber INT,
+	roomIn INT,
+	buildingName VARCHAR(100),
+	CONSTRAINT FOREIGN KEY (shelfUnitNumber, roomIn, buildingName) REFERENCES shelfunit(idNumber, roomIn, buildingName) ON UPDATE CASCADE,
+	PRIMARY KEY(number, shelfUnitNumber, roomIn, buildingName)
+)ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS activeitem
+(
+	itemIDNumber INT PRIMARY KEY,
+	checkedOutUserEmail VARCHAR(100),
+	checkedOutDate DATE,
+	department VARCHAR(100),
+	buildingIn VARCHAR(100),
+	roomIn INT,
+	shelfUnitIn INT,
+	shelfIn INT,
+	usePeriod INT,
+	CONSTRAINT FOREIGN KEY( shelfIn, shelfUnitIn, roomIn, buildingIn ) references shelf( number, shelfUnitNumber, roomIn, buildingName ) ON UPDATE CASCADE
+)ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS disposalmethod
+(
+	description VARCHAR(100) PRIMARY KEY
+)ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS disposeditem
+(
+	itemIDNumber INT PRIMARY KEY,
+	disposalMethod VARCHAR(100),
+	CONSTRAINT FOREIGN KEY (disposalMethod) REFERENCES disposalmethod(description),
+	disposalDate DATE,
+	disposalReason VARCHAR(100)
+)ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS printqueue
+(
+	itemIDNumber INT,
+	CONSTRAINT FOREIGN KEY (itemIDNumber) REFERENCES individualitem(idNumber),
+	user800number INT,
+	CONSTRAINT FOREIGN KEY (user800number) REFERENCES admin(800number),
+	PRIMARY KEY( itemIDNumber, user800number )
+)ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS activeusers
+(
+	email VARCHAR(100),
+	CONSTRAINT FOREIGN KEY (email) REFERENCES user(email),
+	PRIMARY KEY (email)
+)ENGINE=InnoDB;
+
+INSERT IGNORE INTO user( 800number ) values( 800 );
+INSERT IGNORE INTO admin( 800number, password ) values( 800, "$2y$10$SebseDendcyxf7HgM.sume1N1tstDJwZrCjXatzf1VT9ly/6hvrCy" );

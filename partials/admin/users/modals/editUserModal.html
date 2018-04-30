@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div id="editUserInfoModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edit User Info</h4>
+      </div>
+      <div class="modal-body">
+        <form name="editUserForm">
+          <div class="row">
+
+            <div class="header col-md-12">
+              <h4>
+                <strong>Personal Information:</strong>
+              </h4>
+            </div>
+
+            <!-- User Full Name -->
+            <div class="col-md-6 form-group input">
+              <input class="form-control" type="text" id="userNameInput" placeholder="User Full Name" ng-model="newUserInfo.name" required/>
+            </div>
+            <!-- User Phone # -->
+            <div class="col-md-6 form-group input">
+              <input class="form-control" type="text" id="phoneNumberInput" placeholder="Phone #" ng-model="newUserInfo.phoneNumber" href="#" data-toggle="tooltip" title="Please enter a valid phone number" data-placement="bottom" required/>
+            </div>
+            <!-- User Email -->
+            <div class="col-md-12 form-group input">
+              <input class="form-control" type="email" id="emailInput" placeholder="Email address" ng-model="newUserInfo.email" required/>
+            </div>
+
+            <br />
+            <br />
+
+            <div class="header col-md-12">
+              <h4>
+                <strong>University Information:</strong>
+              </h4>
+            </div>
+
+            <!-- University 800 # -->
+            <div class="col-md-6 form-group">
+              <input class="form-control bstrap-tooltip input" id="uNumberInput" placeholder="University 800#" type="number" ng-model="newUserInfo.uNumber" href="#" data-toggle="tooltip" title="9-digit entry req'd" data-placement="bottom" required/>
+            </div>
+            <!-- User level -->
+            <div class="col-md-6 form-group input">
+              <select class="form-control input" id="userLevelInput" required>
+                <option value="1">Assisted</option>
+                <option value="2">Self-serve</option>
+              </select>
+            </div>
+            <!-- User Card # -->
+            <div class="col-md-6 form-group">
+  						<!--<input class="btn btn-warning" ng-click="showAddUserSwipeModal()" value="Add User Swipe Access" style="width:100%;"></input>-->
+  					</div>
+  					<div class="col-md-6 form-group">
+  						<input class="form-control" id="cNumberInput" disabled ng-model="newUserInfo.cNumber"/>
+  					</div>
+            <!-- Submit Button -->
+            <div class="col-md-12 form-group">
+              <div class="row">
+                <div class="col-md-12">
+                  <button id="submitButton" class="btn btn-success btn-lg pull-right" type="button" ng-click="submitChanges(newUserInfo)">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+<div id="all-users">
+	<div class="row">
+		<div class="col-md-12">
+            <div class="row">
+				<!-- Header -->
+				<div class="header col-md-6">
+	                <h3><strong>Hive Users</strong></h3>
+                    <p></p>
+	            </div>
+				<div class="col-md-12" style="padding-right: 30px; padding-left: 30px;">
+					<div id="resultHTML">
+
+		    		</div>
+				</div>
+            </div>
+
+            <div class="table-container">
+				<table datatable="ng" dt-options="dtOptions" id="allUsersTable" class="row-border hover datatable compact">
+					<colgroup>
+						<col span="1" class="name">
+						<col span="1" class="email">
+						<col span="1" class="idNumber">
+						<col span="1" class="phoneNumber">
+						<col span="1" class="numItems">
+						<col span="1" class="button">
+						<col span="1" class="button">
+						<col span="1" class="button">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>e-mail</th>
+							<th>Cougar ID</th>
+							<th>Phone</th>
+							<th># of Items Out</th>
+							<th></th>
+							<th></th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="user in activeUsers track by $index" class="table-row">
+		                    <td ng-click="showUserInfoModal(user.email)">{{ user.name }}</td>
+		                    <td ng-click="showUserInfoModal(user.email)">{{ user.email }}</td>
+		                    <td ng-click="showUserInfoModal(user.email)">{{ user['800number'] }}</td>
+		                    <td ng-click="showUserInfoModal(user.email)">{{ user.phoneNumber }}</td>
+		                    <td ng-click="showUserInfoModal(user.email)">{{ user.numItems }}</td>
+		                    <td><button class="btn btn-warning row-button" ng-click="showEditUserModal(user.email)"
+		                    title="Edit"><i class="fa fa-edit"></i></button></td>
+												<td><button class="btn btn-danger row-button" ng-click="deleteUser(user.email, user.numItems)"
+		                    title="Delete"><i class="fa fa-trash"></i></button></td>
+												<td><button class="btn btn-info row-button" ng-click="showEmailUserModal(user.name, user.email)"
+		                    title="Email"><i class="fa fa-envelope"></i></button></td>
+		                </tr>
+					</tbody>
+				</table>
+			</div>
+	    </div>
+    </div>
+</div>

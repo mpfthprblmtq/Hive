@@ -1,0 +1,50 @@
+<div id="itemInfoModal" class="modal fade" ng-init="initController()">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+        		<h4 class="modal-title">Item Info</h4>
+			</div>
+			<div class="modal-body" id="info-modal-body">
+				<div class="row">
+					<div class="col-md-6">
+						<p><strong>Name:  </strong>{{itemInfo.itemName}}</p>
+						<p><strong>Category:  </strong>{{itemInfo.itemCategoryName}}</p>
+					</div>
+					<div class="col-md-6">
+						<p><strong>Department:  </strong>{{itemInfo.department}}</p>
+						<p><strong>Location:  </strong>{{itemInfo.formattedLoc}}</p>
+					</div>
+				</div>
+				<hr class="break">
+				<div class="row">
+					<div class="col-md-12">
+						<p><strong>Description:  </strong><br>{{itemInfo.description}}</p>
+					</div>
+					<div class="col-md-6">
+						<p><strong>Date Added:  </strong><br>{{itemInfo.dateAdded}}</p>
+					</div>
+					<div class="col-md-6">
+						<p><strong>Notes:  </strong><br>{{itemInfo.text}}</p>
+					</div>
+					<div class="col-md-12">
+						<p><strong>Search Tags:  </strong><br>{{itemInfo.searchTags}}</p>
+					</div>
+				</div>
+				<hr class="break">
+				<div class="row">
+					<div class="col-md-12">
+						<p><strong>ID:  </strong>{{itemInfo.itemIDNumber}}</p>
+						<p><strong>Use Period:  </strong>{{itemInfo.usePeriod}} day(s)</p>
+						<p><strong>Checked out by:   </strong>{{itemInfo.checkedOutUserEmail}}</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<button id="editButton" class="btn btn-default btn-lg pull-right" ng-click="changeToEdit(itemInfo.itemIDNumber)"><i class="fa fa-edit"></i> Edit</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

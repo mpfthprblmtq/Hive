@@ -1,0 +1,52 @@
+<div id="checkout-page">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8" algin="center">
+      <div id="beginDiv">
+        <button type="button" style="width: 75%;" class="btn btn-warning btn-lg" id="beginButton" ng-click="showCheckoutBeginModal()">Click here to begin</button>
+      </div>
+      <div id="scanningDiv" hidden>
+
+      </div>
+      <div id="scanningInputDiv" hidden>
+        <form class="form-group" ng-submit="inputItem(scannerInput)">
+          <input id="itemToAdd" class="form-control text-center" type="text" ng-model="scannerInput" style="width:20%;" placeholder="Item ID" autocomplete="off" autofocus/>
+        </form>
+      </div>
+      <div class="table-container">
+        <table datatable="ng" dt-options="dtOptions" id="checkoutItemsTable" class="row-border hover">
+          <colgroup>
+            <col span="1" class="id">
+            <col span="1" class="name">
+            <col span="1" class="button">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <tr ng-repeat="item in itemsToCheckout | filter:searchText" class="table-row">
+              <td ng-click=>{{ item.itemIDNumber }}</td>
+              <td ng-click=>{{ item.itemName }}</td>
+              <td><button class="btn btn-danger row-button" ng-click="removeItemFromList(item)" title="Edit"><i class="fa fa-trash"></i></button></td>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <button type="button" class="btn btn-info btn-lg pull-right" id="cancelButton" ng-click="cancelCheckout()">Cancel</button>
+      </div>
+      <div class="col-md-4">
+        <button type="button" class="btn btn-success btn-lg pull-left" id="checkoutButton" ng-click="checkOut()">Checkout</button>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>

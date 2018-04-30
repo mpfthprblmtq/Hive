@@ -1,0 +1,44 @@
+<div id="home-search">
+  <div class="row">
+    <div class="row">
+  		<div class="col-md-2"></div>
+  		<div class="col-md-8">
+        <h3><strong></strong>Welcome to the Hive Resource Manager!</strong></h3>
+        <h5><strong>Use this screen to search for items in the system, including name, location and availability.</strong></h5>
+        <br />
+  			<div class="form-group">
+  		  	<input type="text" class="form-control" id="searchbar" placeholder="Enter search query here..." ng-model="searchText">
+
+  				<div class="table-container">
+  					<table datatable="ng" dt-options="dtOptions" id="searchItemsTable" class="row-border hover datatable">
+  						<colgroup>
+  							<col span="1" class="id">
+  							<col span="1" class="name">
+  							<col span="1" class="availability">
+  							<col span="1" class="location">
+  						</colgroup>
+  						<thead>
+  							<tr>
+  								<th>ID</th>
+  								<th>Name</th>
+  								<th>Availability</th>
+  								<th>Location</th>
+  							</tr>
+  						</thead>
+  						<tbody>
+  							<tr ng-repeat="item in activeItems | filter:searchText" class="table-row">
+                  <td ng-click=>{{ item.itemIDNumber }}</td>
+                  <td ng-click=>{{ item.itemName }}</td>
+                  <td ng-click=>{{ item.checkedOutUserEmail }}</td>
+                  <td ng-click=>{{ item.location }}</td>
+                </tr>
+  						</tbody>
+  					</table>
+  				</div>
+  			</div>
+  		</div>
+  		<div class="col-md-2"></div>
+  	</div>
+  </div>
+
+</div>

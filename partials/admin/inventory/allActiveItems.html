@@ -1,0 +1,59 @@
+<link href="../css/labelModal.css?<?php echo time(); ?>" rel="stylesheet" type="text/css" >
+
+<div id="all-items">
+	<!-- Header -->
+	<div class="row">
+		<div class="header col-md-6">
+		    <h3><strong>Active Item Inventory</strong></h3>
+	            <input class="btn btn-info btn-lg print-button" ng-click="showSelectStartingPointPrintModal('ALL')" name='printButton' value="Print" readonly/>
+	            <label ng-model="numItems" class="text-left print-button-text"><strong>There are {{ numItems }} items waiting to be printed. </strong></label>
+	    </div>
+		<div class="tabs text-right col-md-6">
+			<h4>Active Items <strong>/</strong> <a href="viewAllDisposedItems">Disposed Items</a></h4>
+			<div id="resultHTML">
+
+    		</div>
+		</div>
+    </div>
+	<div class="table-container">
+		<table datatable="ng" dt-options="dtOptions" id="allItemsTable" class="row-border hover datatable compact">
+			<colgroup>
+				<col span="1" class="id">
+				<col span="1" class="name">
+				<col span="1" class="category">
+				<col span="1" class="availability">
+				<col span="1" class="department">
+				<col span="1" class="hidden">
+				<col span="1" class="button">
+				<col span="1" class="button">
+				<col span="1" class="button">
+			</colgroup>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Category</th>
+					<th>Availability</th>
+					<th>Department</th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in activeItems" class="table-row">
+                    <td ng-click="showItemInfoModal(item.itemIDNumber)">{{ item.itemIDNumber }}</td>
+                    <td ng-click="showItemInfoModal(item.itemIDNumber)">{{ item.itemName }}</td>
+                    <td ng-click="showItemInfoModal(item.itemIDNumber)">{{ item.itemCategoryName }}</td>
+                    <td ng-click="showItemInfoModal(item.itemIDNumber)">{{ item.checkedOutUserEmail }}</td>
+                    <td ng-click="showItemInfoModal(item.itemIDNumber)">{{ item.abbreviation }}</td>
+                    <td style="display:none;">{{ item.searchTags }}</td>
+                    <td><button class="btn btn-warning row-button" ng-click="showEditItemModal(item.itemIDNumber)" title="Edit"><i class="fa fa-edit"></i></button></td>
+                    <td><button class="btn btn-danger row-button" ng-click="deleteDisposeItem(item.itemIDNumber, item.checkedOutUserEmail)" title="Delete"><i class="fa fa-trash"></i></button></td>
+                    <td><button class="btn btn-primary row-button" ng-click="showChoosePrintOptionModal(item.itemIDNumber)" title="Print"><i class="fa fa-print"></i></button></td>
+                </tr>
+			</tbody>
+		</table>
+	</div>
+</div>

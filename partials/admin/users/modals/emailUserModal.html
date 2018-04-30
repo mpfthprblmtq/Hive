@@ -1,0 +1,32 @@
+<div id="emailUserModal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+        		<h4 class="modal-title">Email Individual User</h4>
+			</div>
+			<div class="modal-body" id="info-modal-body">
+        <form ng-submit="emailUser(name, email, subject, message)">
+          <div class="row">
+						<div class="col-md-12 form-group">
+							<input type="text" class="form-control" name="name" id="name" placeholder="User's Name" ng-model="name" required>
+						</div>
+						<div class="col-md-12 form-group">
+							<input type="text" class="form-control" name="email" id="email" placeholder="User's Email" ng-model="email" required>
+						</div>
+						<div class="col-md-12 form-group">
+							<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" ng-model="subject" required>
+						</div>
+						<div class="col-md-12 form-group">
+							<textarea class="form-control" id="message" name="message" placeholder="Email Text Body"
+								rows="10" style="resize:vertical;" ng-model="message" required></textarea>
+						</div>
+						<center>
+							<button type="submit" class="btn btn-success">Submit</button>
+						</center>
+					</div>
+        </form>
+      </div>
+		</div>
+	</div>
+</div>

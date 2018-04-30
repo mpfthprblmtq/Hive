@@ -1,0 +1,222 @@
+html *:not(i) {
+   font-family: 'Open Sans' !important;
+   width: auto;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-bottom: 100px;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+script { visibility: hidden; }
+
+/*
+#main-navbar .navbar {
+  background-color: #723332;
+  border-radius: 0px;
+}
+
+#main-navbar .nav li,a{ display: inline-block; font-size: 25px; color: #fff; padding-right: 50px;}
+
+#main-navbar .nav li a:hover {
+  background-color: #602120;
+  color: #fff;
+}
+
+#main-navbar .nav .active a {
+  background: #602120 !important;
+  color: #fff;
+}*/
+
+/*
+#main-navbar { background-color: #723332; }
+#main-navbar li{ display: inline-block; font-size: 20px; }
+.nav>li>a:focus, .nav>li>a:hover {
+        text-decoration: none;
+        background-color: transparent !important;
+  }
+#nav-item { color: #fff;}
+*/
+#main .nav li { display: inline-block; color: #fff; }
+#main .nav a { color: #fff; }
+#main .navbar {
+  background-color: #723332;
+  border-radius: 0px;
+  font-size: 25px;
+}
+#main .nav li a:hover {
+  background-color: #602120;
+  color: #fff;
+}
+#main .nav .active a {
+  background: #602120 !important;
+  color: #fff;
+}
+#main #nav-help { padding-right: 50px;}
+/*#main .nav li,a { display: inline-block; color: #fff; padding-right: 50px;}*/
+
+#main-footer {
+  background-color: #723332;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  height: 50px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  padding-top: 10px;
+  margin-bottom: 0px;
+  position: fixed;
+}
+
+#home-search #searchbar { font-size: 20px; text-align: center; height: 50px; margin-bottom: 30px; width: 90%;}
+
+#header img { position: relative; float: left; margin: 5px; width: 150px; height: auto; }
+#header h1 { position: relative; margin-top: 110px; font-weight: bold; float: left;}
+#header .admin-link { float: right; margin-top: 130px; padding-right: 30px; color: #3275AC;}
+
+#checkout-page colgroup .id { width: 20%; }
+#checkout-page colgroup .name { width: 70%; }
+#checkout-page colgroup .button { width: 10%; }
+
+#navigation .break { width: 100%; margin: 0px; height: 5px; border: none; color: #2B0504; background-color: #2B0504; }
+#navigation .sidebar { display: block; float: left; width: 15%; background: #2B0504; }
+#navigation .content { display: block; overflow: hidden; width: auto; }
+#navigation .sidebar-nav ul { padding: 0; margin: 0; list-style: none; }
+#navigation .sidebar-nav a, .sidebar-nav a:hover, .sidebar-nav a:focus, .sidebar-nav a:active { outline: none; }
+#navigation .sidebar-nav ul li, .sidebar-nav ul a { display: block; }
+#navigation .sidebar-nav ul a:hover, .sidebar-nav ul a:focus, .sidebar-nav ul a:active { color: #fff; text-decoration: none; }
+#navigation .sidebar-nav ul ul a { padding: 10px 30px; background-color: rgba(255, 255, 255, 0.1); }
+#navigation .sidebar-nav ul ul a:hover, .sidebar-nav ul ul a:focus, .sidebar-nav ul ul a:active { background-color: rgba(255, 255, 255, 0.2); }
+#navigation .sidebar-nav-item { padding-left: 5px; }
+#navigation .sidebar-nav-item-icon { padding-right: 5px; }
+#navigation .sidebar-nav ul a {
+  padding: 10px 20px;
+  color: #aaa;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.05) inset;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
+}
+#navigation .sidebar-nav {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  background-image: -webkit-linear-gradient(left, color-stop(#333333 10px), color-stop(#222222 10px));
+  background-image: linear-gradient(to right, #1A0203 10px, #2B0504 10px);
+  background-repeat: repeat-x;
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff333333', endColorstr='#ff222222', GradientType=1);
+}
+
+
+
+#add-item .print-button { width: 100%; }
+#add-item .header, #add-user .header { padding-left: 30px; }
+#add-item #resultHTML { padding-right: 30px; padding-top: 10px; }
+#add-user #resultHTML { padding-right: 30px; padding-left: 30px; padding-top: 10px; }
+
+#all-items .header, #all-users .header { padding-left: 30px; }
+#all-items .print-button { width: 100px; }
+#all-items .print-button-text { padding: 15px 15px 15px 15px; }
+#all-items .table-container, #all-users .table-container  { padding: 20px; }
+#all-items colgroup .id, #all-users colgroup .numItems{ width: 10%; }
+#all-items colgroup .name, #all-users colgroup .name { width: 30%; }
+#all-items colgroup .category, #all-users colgroup .email { width: 29%; }
+#all-items colgroup .availability, #all-users colgroup .idNumber { width: 15%; }
+#all-items colgroup .department, #all-users colgroup .phoneNumber { width: 15%; }
+#all-items colgroup .button, #all-users colgroup .button { width: 7%; }
+#all-items tr, #all-users tr { height: 50px; }
+#all-items .row-button, #all-users .row-button { padding-right: 10px; padding-left: 10px; padding-top: 5px; padding-bottom: 5px; margin-top: 5px; margin-bottom: 5px; }
+#all-items .tabs, #all-users .tabs { padding-right: 45px; padding-top: 15px; }
+
+#deleteModal .delete-button { text-align: center; }
+#confirmDeleteModal .delete-button { text-align: center; }
+
+#itemInfoModal .modal-dialog { overflow-y:hidden!important; width: 600px; }
+
+#editItemInfoModal .modal-dialog { width: 900px; }
+#editUserInfoModal .modal-dialog { width: 700px; }
+
+#editLocationModal .modal-dialog { width: 700px; }
+
+#all-locations { padding-left: 30px; }
+#all-locations .spaced { margin: 5px; }
+#all-locations #resultHTML { padding-right: 30px; padding-top: 10px; }
+
+#add-user .form-group { padding-left: 30px; }
+
+#add-admin { padding-left: 30px; }
+#add-admin #resultHTML { padding-right: 30px; padding-top: 10px; }
+
+#checkout-page #swipeButton { margin-bottom: 50px; margin-top: 20px }
+
+#helpModal .modal-dialog { width: 900px; }
+#helpModal .modal-content { height: 500px; }
+#helpModal a { color: #000; text-decoration: none; }
+#helpModal .one { padding-left: 15px; }
+#helpModal .two { padding-left: 30px; }
+#helpModal .modal-body { padding-left: 0; padding-top: 0; }
+
+#helpModal #navigation .sidebar { display: block; float: left; width: 20%; background: #2B0504; padding-bottom: 278px; }
+#helpModal #searchText { display:none; }
+#helpModal #checkoutText { display:none; }
+#helpModal #checkinText { display:none; }
+
+
+hr .break { width: 90%; }
+
+.wrapper{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #401E1D;
+}
+
+.modal-wrapper{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #401E1D;
+}
+
+#page-wrapper{
+    background-color: white;
+    position:absolute;
+    left: 15%;
+    width: 85%;
+    height: 100%;
+}
+
+#modal-page-wrapper {
+  background-color: white;
+  position:absolute;
+  left: 15%;
+  width: 85%;
+  height: 442px;
+  overflow-y: scroll;
+}
+
+.modal-header{
+  background-color: #723332;
+  color: white;
+}
+
+.modal-open {
+  overflow: scroll;
+}
+
+.close{
+  color: white;
+}
+
+.tooltip-inner { background-color: #FAFCFE; color: black; border: 1px solid #CCCCCC; }
+.tooltip.bottom .tooltip-arrow { border-bottom-color: #CCCCCC; }

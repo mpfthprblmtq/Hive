@@ -1,0 +1,35 @@
+<div id="checkoutBeginModal" class="modal fade">
+	<div id="checkoutBeginActualModal" class="modal-dialog" style="width: 700px;">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+        		<h4 class="modal-title">Begin Checkout</h4>
+			</div>
+			<div class="modal-body">
+				<br>
+				<form class="form-horizontal" ng-submit="checkUser(input)">
+					<div class="row">
+						<div class="col-md-2"></div>
+						<div class="col-md-8">
+							<input type="text" class="form-control" id="inputField" ng-model="input" placeholder="Swipe your Cougar Card to get started" autofocus>
+						</div>
+						<div class="col-md-2"></div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-md-2"></div>
+						<div class="col-md-8">
+							<center>
+								<p id="errorLabel" style="color: red;" visibility="hidden"><strong></strong></p>
+								<p id="otherErrorLabel" style="color: red;" visibility="hidden"><strong></strong></p>
+							</center>
+							<button class="btn btn-info pull-left" type="button" ng-click="changeToAdminCredentialEntryModal('manualEntry')" style="width:35%;">Manual Checkout</button>
+							<input class="btn btn-success pull-right" type="submit" style="width:35%;"></input>
+						</div>
+						<div class="col-md-2"></div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

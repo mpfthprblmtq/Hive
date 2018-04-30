@@ -1,0 +1,25 @@
+<div id="confirmDeleteLocationModal" class="modal fade">
+	<div class="modal-dialog" style="width: 500px;">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+        		<h4 class="modal-title">Confirm Deletion of Location</h4>
+			</div>
+			<div class="modal-body">
+				<center>
+				<h4 id="deleteHTML"><strong>Are you sure you want to completely remove this location from Hive?</strong></h4>
+				<h4><strong>There are {{ numItems }} items associated with this location.</strong></h4>
+				</br></br>
+				<div class="row">
+					<div class="col-md-6 delete-button">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+					</div>
+					<div class="col-md-6 delete-button">
+						<button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="deleteLocation()">Delete</button>
+					</div>
+				</div>
+				</center>
+			</div>
+		</div>
+	</div>
+</div>

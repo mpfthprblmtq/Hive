@@ -1,0 +1,112 @@
+<div id="editItemInfoModal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+        		<h4 class="modal-title">Edit Item Info</h4>
+			</div>
+			<div class="modal-body">
+				<form name="editItemForm" ng-submit="submitChanges(newItemInfo)">
+					<div class="row">
+							<!-- Item Name -->
+				            <div class="col-md-6 form-group">
+				            	<label for="itemNameInput">Name:</label>
+				                <input class="form-control itemNameInput input" id="itemNameInput" type="text" placeholder="Item Name" ng-model="newItemInfo.itemName" required>
+				            </div>
+
+			                <!-- Item Category -->
+			                <div class="col-md-6 form-group">
+			                	<label for="itemCategoryInput">Category:</label>
+			                    <input class="form-control input" id="itemCategoryInput" type="text" list="itemCategoryName" placeholder="Item Category" ng-model="newItemInfo.itemCategory" required/>
+			                    <datalist id="itemCategoryName">
+			                        <option ng-repeat="category in categories track by $index">{{ category.name }}</option>
+			                    </datalist>
+			                </div>
+
+			                <!-- Item Building -->
+			                <div class="col-md-3 form-group">
+			                	<label for="buildingInput">Building:</label>
+			                    <input class="form-control input" type="text" id="buildingInput" list="buildingList" placeholder="Building" ng-model="newItemInfo.building" required/>
+			                    <datalist id="buildingList">
+			                         <option ng-repeat="building in buildings">{{ building }}</option>
+			                    </datalist>
+			                </div>
+
+			                <!-- Item Room -->
+			                <div class="col-md-2 form-group">
+			                	<label for="roomInput">Room:</label>
+			                    <input class="form-control input" type="number" id="roomInput" list="roomList" placeholder="Room" ng-model="newItemInfo.room" required/>
+			                    <datalist id="roomList">
+			                        <!-- options here -->
+			                    </datalist>
+			                </div>
+
+			                <!-- Item Shelf Unit -->
+			                <div class="col-md-2 form-group">
+			                	<label for="shelfUnitInput">Shelf Unit:</label>
+			                    <input class="form-control input" type="number" id="shelfUnitInput" list="shelfUnitList" placeholder="Shelving Unit" ng-model="newItemInfo.shelfUnit" required/>
+			                    <datalist id="shelfUnitList">
+			                         <!-- options here -->
+			                    </datalist>
+			                </div>
+
+			                <!-- Item Shelf -->
+			                <div class="col-md-2 form-group">
+			                	<label for="shelfInput">Shelf:</label>
+			                    <input class="form-control input" type="number" id="shelfInput" list="shelfList" placeholder="Shelf" ng-model="newItemInfo.shelf" required/>
+			                    <datalist id="shelfList">
+			                        <!-- options here -->
+			                    </datalist>
+			                </div>
+
+			                <!-- Department -->
+			                <div class="col-md-3 form-group">
+			                	<label for="departmentInput">Department:</label>
+			                    <input class="form-control input" id="departmentInput" type="text" list="departmentList" placeholder="Department" ng-model="newItemInfo.department" required/>
+			                    <datalist id="departmentList">
+			                        <option ng-repeat="department in departments track by $index" value="{{ department.name }}"></option>
+			                    </datalist>
+			                </div>
+
+				            <!-- Item Description -->
+				            <div class="col-md-12">
+			                	<label for="descriptionInput">Description:</label>
+				                <textarea class="form-control margin-bottom input" id="descriptionInput" placeholder="Description (Optional)" rows="5" type="text" ng-model="newItemInfo.description"></textarea>
+				                <br>
+				            </div>
+
+				            <!-- Item Note -->
+				            <div class="col-md-12">
+			                	<label for="noteInput">Notes:</label>
+				                <textarea class="form-control input" id="noteInput" placeholder="Notes (Optional)" rows="5" type="text" ng-model="newItemInfo.note"></textarea>
+				                <br>
+				            </div>
+
+				            <!-- Item Search Tags -->
+				            <div class="col-md-9 form-group">
+			                	<label for="searchTagsInput">Search Tags:</label>
+				                <input class="form-control input" id="searchTagsInput" placeholder="Search Tags (Each tag separated by a space)"  type="text" ng-model="newItemInfo.searchTags" />
+				            </div>
+
+				            <!-- Item Use Period -->
+				            <div class="col-md-3 form-group">
+			                	<label for="usePeriodInput">Use Period (Days):</label>
+				                <input class="form-control input" id="usePeriodInput" type="number" placeholder="Use Period (Days)" string-to-number ng-model="newItemInfo.usePeriod">
+				            </div>
+
+				            <!-- Submit Button -->
+			                <div class="col-md-12 form-group">
+			                    <div class="row">
+			                        <div class="col-md-12">
+			                            <input id="submitButton" class="btn btn-success btn-lg pull-right" type="submit"></input>
+			                        </div>
+			                    </div>
+			                </div>
+
+				        </div>
+				    </div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

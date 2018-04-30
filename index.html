@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="hiveApp" ng-controller="PublicBaseController">
+	<head>
+	<title>HIVE</title>
+        <link rel="icon" href="../img/hive-alt.png">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/metisMenu/2.6.2/metisMenu.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600,700" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../css/angular-datatables.css">
+        <link rel="stylesheet" href="../css/angular-datatables.min.css">
+        <link rel="stylesheet" href="../css/style.css?<?php echo time(); ?>">
+
+        <!-- JS -->
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.6.2/metisMenu.min.js"></script>
+        <script src="js/app-js/publicApp.js"></script>
+        <script src="js/services/serviceModule.js"></script>
+        <script src="js/controllers/public/publicBaseController.js"></script>
+        <script src="js/controllers/public/publicModalController.js"></script>
+        <script src="js/controllers/public/adminLoginController.js"></script>
+        <script src="js/controllers/public/browserDetectionController.js"></script>
+        <script src="lib/angular-modal-service/angular-modal-service.js"></script>
+				<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+        <script src="lib/angular-datatables/angular-datatables.min.js"></script>
+
+	</head>
+	<body>
+
+	<div id="header">
+		<div class="row">
+			<div class="col-md-10">
+				<img src="img/hive-alt.png">
+				<h1>HIVE RESOURCE MANAGER</h1>
+			</div>
+			<div class="col-md-2">
+				<a class="admin-link" style="cursor:pointer" ng-click="showLoginModal()">Log in as Admin</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="main" align="center">
+		<!--<nav class="navbar navbar-static-top" id="main-navbar">
+  		<ul class="nav">
+    		<li><a id="nav-item" href="/">Search Items</a></li>
+    		<li><a id="nav-item" href="checkout">Check Out</a></li>
+    		<li><a id="nav-item" href="checkin">Check In</a></li>
+  		</ul>
+		</nav>-->
+
+		<nav class="navbar" id="main-navbar">
+	  	<!--<div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="#">HIVE</a>
+		    </div>-->
+		    <ul class="nav">
+		      <li id="nav-search"><a href="/">Search Items</a></li>
+		      <li id="nav-checkout"><a href="checkout">Check Out</a></li>
+		      <li id="nav-checkin"><a href="checkin">Check In</a></li>
+					<li id="nav-help" class="pull-right">
+						<a ng-click="showHelpModal()" role="button"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a>
+					</li>
+		    </ul>
+		    <!--<button class="btn btn-danger navbar-btn">Test Button</button>
+		  </div>-->
+		</nav>
+		<div ng-view></div>
+	</div>
+
+
+
+
+	<footer id="main-footer">
+		<p>Instructional Materials Center, SIUE</p>
+	</footer>
+	</body>
+</html>

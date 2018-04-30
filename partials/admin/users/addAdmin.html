@@ -1,0 +1,71 @@
+<div  id="add-admin">
+	<form name="addAdminForm" ng-submit="newAdmin(name, email, username, password)">
+		<div class="row">
+			<div class="col-md-10">
+        <div class="row">
+    			<!-- Header -->
+    			<div class="header col-md-6">
+    	    	<h3><strong>Add Administrators</strong></h3>
+            <p>Fill in the information for the new administrator, then hit add.</p>
+    	    </div>
+
+    	    <div id="resultHTML" class="col-md-6"></div>
+        </div>
+
+			  <div class="row">
+					<div class="col-md-4 form-group">
+	        	<input class="form-control" type="text" id="name" placeholder="Name" ng-model="name" required/>
+	        </div>
+	        <div class="col-md-8"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 form-group">
+	        	<input class="form-control" type="email" id="email" placeholder="Email" ng-model="email" required/>
+	        </div>
+	        <div class="col-md-8"></div>
+				</div>
+				<div class="row">
+	        <div class="col-md-4 form-group">
+	        	<input class="form-control" type="text" id="username" placeholder="800 Number" ng-model="username" required/>
+	        </div>
+	        <div class="col-md-8"></div>
+	      </div>
+	      <div class="row">
+	      	<div class="col-md-3 form-group">
+	        	<input class="form-control" type="password" id="password" placeholder="Password" ng-model="password" required/>
+	        </div>
+	        <div class="col-md-9"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-3 form-group">
+	        	<input class="form-control" type="password" id="confirmPassword" placeholder="Confirm Password" required/>
+						<div class="help-block with-errors"></div>
+	        </div>
+	        <div class="col-md-9"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-3">
+						<button class="btn btn-danger pull-right" type="submit"><i class="fa fa-plus"></i> Add Admin</button>
+					</div>
+					<div class="col-md-9"></div>
+			  </div>
+			</div>
+			<div class="col-md-2"></div>
+    </div>
+  </form>
+	<script type="text/javascript">
+	var password = document.getElementById("password")
+  , confirm_password = document.getElementById("confirmPassword");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+	</script>
+</div>

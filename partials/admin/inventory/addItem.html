@@ -1,0 +1,124 @@
+<link href="../css/labelModal.css?<?php echo time(); ?>" rel="stylesheet" type="text/css" >
+
+<div  id="add-item">
+	<form name="addItemForm" ng-submit="addItem(itemInfo)">
+		<div class="row">
+			<div class="col-md-10">
+                <div class="row">
+    				<!-- Header -->
+    				<div class="header col-md-6">
+    	                <h3><strong>Add Items to Inventory</strong></h3>
+                        <p>Fill out the required item information, then click Submit.</p>
+    	            </div>
+
+    	            <div id="resultHTML" class="col-md-6">
+
+    	            </div>
+                </div>
+
+	            <!-- Item Name -->
+	            <div class="col-md-6 form-group">
+	                <input class="form-control" id="itemNameInput" placeholder="Item Name" type="text" ng-model="itemInfo.itemName" required>
+	            </div>
+
+                <!-- Item Category -->
+                <div class="col-md-6 form-group">
+                    <input class="form-control" id="itemCategoryInput" type="text" list="itemCategoryName" placeholder="Item Category" ng-model="itemInfo.itemCategory" required/>
+                    <datalist id="itemCategoryName">
+                        <option ng-repeat="category in categories track by $index">{{ category.name }}</option>
+                    </datalist>
+                </div>
+
+                <!-- Item Building -->
+                <div class="col-md-3 form-group">
+                    <input class="form-control" type="text" id="buildingInput" list="buildingList" placeholder="Building" ng-model="itemInfo.building" required/>
+                    <datalist id="buildingList">
+                         <option ng-repeat="building in buildings">{{ building }}</option>
+                    </datalist>
+                </div>
+
+                <!-- Item Room -->
+                <div class="col-md-2 form-group">
+                    <input class="form-control" type="number" id="roomInput" list="roomList" placeholder="Room" ng-model="itemInfo.room" required/>
+                    <datalist id="roomList">
+                        <!-- options here -->
+                    </datalist>
+                </div>
+
+                <!-- Item Shelf Unit -->
+                <div class="col-md-2 form-group">
+                    <input class="form-control" type="number" id="shelfUnitInput" list="shelfUnitList" placeholder="Shelving Unit" ng-model="itemInfo.shelfUnit" required/>
+                    <datalist id="shelfUnitList">
+                         <!-- options here -->
+                    </datalist>
+                </div>
+
+                <!-- Item Shelf -->
+                <div class="col-md-2 form-group">
+                    <input class="form-control" type="number" id="shelfInput" list="shelfList" placeholder="Shelf" ng-model="itemInfo.shelf" required/>
+                    <datalist id="shelfList">
+                        <!-- options here -->
+                    </datalist>
+                </div>
+
+                <!-- Department -->
+                <div class="col-md-3 form-group">
+                    <input class="form-control" id="departmentInput" type="text" list="departmentList" placeholder="Department" ng-model="itemInfo.department" required/>
+                    <datalist id="departmentList">
+                        <option ng-repeat="department in departments track by $index" value="{{ department.name }}"></option>
+                    </datalist>
+                </div>
+
+	            <!-- Item Description -->
+	            <div class="col-md-12">
+	                <textarea class="form-control margin-bottom" id="descriptionInput" placeholder="Description (Optional)" rows="5" type="text" ng-model="itemInfo.description"></textarea>
+	                <br>
+	            </div>
+
+	            <!-- Item Note -->
+	            <div class="col-md-12">
+	                <textarea class="form-control" id="noteInput" placeholder="Notes (Optional)" rows="5" type="text" ng-model="itemInfo.note" ></textarea><br>
+	            </div>
+
+	            <!-- Item Search Tags -->
+	            <div class="col-md-9 form-group">
+	                <input class="form-control" id="searchTagsInput" placeholder="Search Tags (Each tag separated by a space) or Author (First and Last name)"  type="text" ng-model="itemInfo.searchTags" />
+	            </div>
+
+	            <!-- Item Use Period -->
+	            <div class="col-md-3 form-group">
+	                <input class="form-control" id="usePeriodInput" type="number" ng-model="itemInfo.usePeriod" placeholder="Use Period (Days)" />
+	            </div>
+
+                <!-- Label Print -->
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-3 form-group">
+                            <input class="btn btn-info btn-lg pull-left print-button" ng-click="showSelectStartingPointPrintModal('ALL')" name='printButton' value="Print" readonly/>
+                        </div>
+                        <div class="col-md-9">
+                            <p ng-model="numItems" style="padding: 15px 0px 0px 0px;"><strong>There are {{ numItems }} items waiting to be printed.</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+	            <!-- Submit Button -->
+                <div class="col-md-6 form-group">
+                    <div class="row">
+                        <div class="col-md-9"></div>
+                        <div class="col-md-3">
+                            <input class="btn btn-success btn-lg pull-right" type="submit"></input>
+                        </div>
+                    </div>
+                </div>
+	        </div>
+
+	        <div class="col-md-2">
+	        	<!-- ? -->
+	        </div>
+        </div>
+    </form>
+    <div class="row">
+    <!-- why is this here??? -->
+    </div>
+</div>

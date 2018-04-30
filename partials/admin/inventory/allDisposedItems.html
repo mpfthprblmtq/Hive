@@ -1,0 +1,40 @@
+<div id="all-items">
+	<!-- Header -->
+	<div class="row">
+		<div class="header col-md-6">
+		    <h3><strong>Disposed Item Inventory</strong></h3>
+	    </div>
+		<div class="tabs text-right col-md-6">
+			<h4><a href="viewAllActiveItems">Active Items</a> <strong>/</strong> Disposed Items</a></h4>
+		</div>
+    </div>
+	<div class="table-container">
+		<table datatable="ng" dt-options="dtOptions" class="row-border hover datatable compact">
+			<colgroup>
+				<col span="1" class="id">
+				<col span="1" class="name">
+				<col span="1" class="method">
+				<col span="1" class="reason">
+				<col span="1" class="dateDisposed">
+			</colgroup>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Disposal Method</th>
+					<th>Reason for Disposal</th>
+					<th>Date Disposed</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in disposedItems" class="table-row">
+                    <td>{{ item.itemIDNumber }}</td>
+                    <td>{{ item.itemName }}</td>
+                    <td>{{ item.disposalMethod }}</td>
+                    <td>{{ item.disposalReason }}</td>
+                    <td>{{ item.disposalDate }}</td>
+                </tr>
+			</tbody>
+		</table>
+	</div>
+</div>

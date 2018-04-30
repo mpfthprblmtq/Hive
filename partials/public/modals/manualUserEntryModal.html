@@ -1,0 +1,48 @@
+<div id="manualUserEntryModal" class="modal fade">
+	<div class="modal-dialog" style="width: 600px;">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+        		<h4 class="modal-title">Non-Campus User Entry</h4>
+			</div>
+			<div class="modal-body">
+				<p>
+					Add the non-campus user information, then hit submit to proceed to checkout.
+				</p>
+				<form ng-submit="addNonCampusUser(name, phone, email, level)">
+          <!-- User Full Name -->
+  				<div class="row">
+          	<div class="col-md-12 form-group">
+            	<input class="form-control" type="text" id="userNameInput" placeholder="User Full Name" ng-model="name" required/>
+            </div>
+  					<div class="col-md-4"></div>
+  				</div>
+
+          <!-- User Email -->
+          <div class="row">
+            <div class="col-md-12 form-group">
+              <input class="form-control" type="email" id="emailInput" placeholder="Email address" ng-model="email" required/>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+
+          <!-- User Phone # -->
+  				<div class="row">
+  	        <div class="col-md-12 form-group">
+  	          <input class="form-control" type="text" id="phoneNumberInput" placeholder="Phone #" ng-model="phone" href="#" data-toggle="tooltip" title="Please enter a valid phone number" data-placement="bottom" required/>
+  	        </div>
+  					<div class="col-md-4"></div>
+  				</div>
+
+          <!-- Submit -->
+  				<div class="row">
+						<div class="col-md-12">
+							<input class="btn btn-success pull-right" type="submit"></input>
+						</div>
+						<div class="col-md-4"></div>
+  				</div>
+        </form>
+			</div>
+		</div>
+	</div>
+</div>

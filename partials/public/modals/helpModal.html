@@ -1,0 +1,115 @@
+<div id="helpModal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Help</h4>
+			</div>
+			<div class="modal-body">
+
+				<div id="navigation">
+          <div class="modal-wrapper">
+            <aside class="sidebar">
+              <nav class="sidebar-nav">
+                <ul class="metismenu" id="menu">
+
+									<!-- Home -->
+                  <li class="select">
+                    <a role="button" ng-click="showHomeText()"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                  </li>
+
+                  <!-- Search -->
+                  <li class="select">
+                    <a role="button" ng-click="showSearchText()"><i class="fa fa-search" aria-hidden="true"></i> Search</a>
+                  </li>
+
+									<!-- Checkout -->
+                  <li class="select">
+                    <a role="button" ng-click="showCheckoutText()"><i class="fa fa-arrow-down" aria-hidden="true"></i> Checkout</a>
+                  </li>
+
+									<!-- Checkin -->
+                  <li class="select">
+                    <a role="button" ng-click="showCheckinText()"><i class="fa fa-arrow-up" aria-hidden="true"></i> Checkin</a>
+                  </li>
+                </ul>
+              </nav>
+            </aside>
+          </div>
+        </div>
+
+				<div id="modal-page-wrapper">
+					<div id="homeText">
+						<br />
+							<img class="one" align="left" src="../../img/hive-alt.png" height="150" length="150"/>
+							<h2 class="two">Welcome to Hive help!</h3>
+						<h3 class="two">Choose one of the options to see the help section!</h3>
+					</div>
+
+					<div id="searchText">
+						<div>
+							<h3 class="one">Searching Items</h3>
+							<br />
+							<p class="one">
+								<strong>To search for items, </strong>use the text field above the table of all items.  You can search by the item's name, category, and search tags.<br /><br />
+							</p>
+
+							<p class="one">
+								<strong>Search Tags</strong>
+							</p>
+							<p class="two">
+								Search tags are attributes for items, so for instance, if you're searching for the game Phonological Awareness, that would probably have the "speech" search tag with it.<br />
+			          Search tags are also a way that you can search for a book by searching for the author.  For instance, if you're searching for books about the Alaskan frontier, you'd probably search for books by the author Jack London. <br /><br />
+							</p>
+
+							<p class="one">
+								<strong>Availability</strong>
+							</p>
+							<p class="two">
+			          An item's availability is its checked out status.  If it shows "Not Available," the item is currently checked out.  If it shows "Available," the item is in the inventory and you should be able to check it out.<br /><br />
+							</p>
+
+							<p class="one">
+								<strong>Location</strong>
+							</p>
+							<p class="two">
+			          On the table of items, you will notice the item's ID, name, availability, and location.  The location is formatted as "BuildingRoom, ShelfUnit-Shelf"<br />
+			          So, Founder's Hall, room number 1211, shelf unit 2, shelf 4 would be formatted as FH1211, 2-4.
+							</p>
+							<br />
+						</div>
+	        </div>
+
+					<div id="checkoutText">
+						<div>
+							<h3 class="one">Checking Out Items</h3>
+							<br />
+							<p class="two">
+		            To check out an item, simply go to the Check Out page, click on the "Click here to begin" button, swipe your cougar card (or put in your email or University ID), and start scanning your items!<br />
+								(Remember to have the magnetic strip <strong>facing you</strong>)<br /><br />
+		            When you scan items, they will be added to the list of items to be checked out.  To remove items from that list of items to be checked out, simply click the red trash button to the right of each item.<br /><br />
+		            When you are finished scanning in items, click the "Checkout" button in the bottom right.<br /><br />
+		            Upon successful checkout, you will get a dialog window that states your checkout was successful.
+		          </p>
+
+						</div>
+					</div>
+
+
+        <div id="checkinText">
+					<div>
+						<h3 class="one">Checking In Items</h3>
+						<br />
+						<p class="two">
+	            To check in items, just go to the Check In page, and start scanning items to check in.  When you scan items in, they will show up in a list on the screen.  To remove items from that list of items to be checked in, simply click the red trash button to the right of each item.<br /><br />
+	            After you're done scanning in all of the items to check out, press the "Checkin" button in the bottom right.<br /><br />
+	            Upon successful checkin, you will get a dialog window that states your checkin was successful.
+	          </p>
+					</div>
+        </div>
+			</div>
+
+			</div>
+		</div>
+	</div>
+</div>

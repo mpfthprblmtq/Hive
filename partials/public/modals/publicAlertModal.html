@@ -1,0 +1,23 @@
+<div id="alertModal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+        		<h4 class="modal-title">Hive Alert</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-8">
+						<center>
+							<h4>{{ message }}</h4>
+							<br />
+							<button id="alertOkButton" ng-click="routeAsNeeded()" type="submit" class="btn btn-primary text-center" style="width:30%;" data-dismiss="modal">OK</button>
+						</center>
+					</div>
+					<div class="col-md-2"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

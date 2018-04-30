@@ -1,0 +1,30 @@
+<div id="disposeInfoModal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content" id="info-modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+        		<h4 class="modal-title">Dispose Item: {{ itemIDNumber }}</h4>
+			</div>
+			<div class="modal-body" id="info-modal-body">
+				<p>Enter disposal reasons/methods below:</p>
+				<div class="row">
+					<div class="col-md-12">
+						<textarea class="form-control" id="reasonInput" placeholder="Reason for disposal" rows="5" type="text" ng-model="disposalInfo.reason"></textarea>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-12">
+						<textarea class="form-control" id="methodInput" placeholder="Method of disposal (Throwing away, donation, etc.)" rows="5" type="text" ng-model="disposalInfo.method"></textarea>
+					</div>
+				</div>
+			</div>	
+			<div class="modal-footer">
+				<div class="col-md-12">
+					<button id="submitButton" class="btn btn-danger btn-lg pull-right" ng-click="dispose(itemIDNumber, disposalInfo.reason, disposalInfo.method)"><i class="fa fa-trash"></i> Submit</button>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>

@@ -1,0 +1,40 @@
+<div id="all-items">
+	<!-- Header -->
+	<div class="row">
+		<div class="header col-md-12">
+		    <h3><strong>Active Item Reporting</strong></h3>
+	    </div>
+    </div>
+	<div class="table-container">
+		<table datatable="ng" dt-options="dtOptions" class="row-border hover datatable compact">
+			<colgroup>
+				<col span="1" class="id">
+				<col span="1" class="name">
+				<col span="1" class="category">
+				<col span="1" class="lastCheckout">
+				<col span="1" class="checkedOutNum">
+				<col span="1" class="button">
+			</colgroup>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Category</th>
+					<th>Last Checkout</th>
+					<th># of Checkouts</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in activeItems" class="table-row">
+                    <td ng-click="showItemInfoModal(item.itemIDNumber)">{{ item.itemIDNumber }}</td>
+                    <td ng-click="showItemInfoModal(item.itemIDNumber)">{{ item.itemName }}</td>
+                    <td ng-click="showItemInfoModal(item.itemIDNumber)">{{ item.itemCategoryName }}</td>
+                    <td ng-click="showItemInfoModal(item.itemIDNumber)">{{ item.dateCheckedOut }}</td>
+                    <td ng-click="showItemInfoModal(item.itemIDNumber)">{{ item.timesCheckedOut }}</td>
+                    <td><button class="btn btn-primary row-button" ng-click="export(item.itemIDNumber)" title="Export"><i class="fa fa-file-excel-o"></i></button></td>
+                </tr>
+			</tbody>
+		</table>
+	</div>
+</div>

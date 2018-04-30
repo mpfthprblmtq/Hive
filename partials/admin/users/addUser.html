@@ -1,0 +1,72 @@
+<div id="add-user">
+	<script language="javascript">var p = false;</script>
+	<form name="addUserForm" onsubmit="return(p)">
+		<div class="row">
+			<div class="col-md-10">
+        		<div class="row">
+    			<!-- Header -->
+    				<div class="header col-md-6">
+    	    			<h3><strong>Add Users to Hive</strong></h3>
+          				<p>Fill out the required user information, then click Submit.</p>
+						<br>
+            			<h4><strong>Personal Information:</strong></h4>
+    	    		</div>	
+    	    	<div id="resultHTML" class="col-md-6"></div>
+        	</div>
+			<div class="row">
+        		<div class="col-md-4 form-group">
+          			<input class="form-control" type="text" id="userNameInput" placeholder="User Full Name" ng-model="userInfo.name" data-toggle="tooltip" title="Please enter a user's full name" data-placement="bottom"/>
+          		</div>
+				<div class="col-md-4 form-group">
+	          		<input class="form-control" type="text" id="phoneNumberInput" placeholder="Phone #" ng-model="userInfo.phoneNumber" href="#" data-toggle="tooltip" title="Please enter a valid phone number" data-placement="bottom"/>
+	        	</div>
+				<div class="col-md-4"></div>
+				</div>
+
+       			<!-- User Email -->
+				<div class="row">
+          			<div class="col-md-8 form-group">
+            			<input class="form-control" type="email" id="emailInput" placeholder="Email address" ng-model="userInfo.email" data-toggle="tooltip" title="Please enter a valid email" data-placement="bottom"/>
+          			</div>
+				<div class="col-md-4"></div>
+				</div>
+				<br/>
+       			<div class="row">
+	      			<div class=" header col-md-6">
+	        			<h4><strong>University Information:</strong></h4>
+		      		</div>
+	      		</div>
+				<div class="row">
+	        		<div class="col-md-4 form-group">
+	        			<input class="form-control" id="uNumberInput" placeholder="University 800#" type="number" ng-model="userInfo.uNumber" href="#" data-toggle="tooltip" title="9-digit entry req'd" data-placement="bottom"/>
+	        		</div>
+				<div class="col-md-4 form-group">
+            		<select class="form-control" id="userLevelInput" ng-model="userInfo.userLevel" data-toggle="tooltip" title="Please select a user type" data-placement="top">
+              			<option value="" selected disabled>Select user type...</option>
+              			<option value="1">Assisted</option>
+             			<option value="2">Self-serve</option>
+            		</select>
+          		</div>
+				<div class="col-md-4"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 form-group">
+						<input class="btn btn-warning" ng-click="showAddUserSwipeModal()" value="Add User Swipe Access" style="width:100%;"></input>
+					</div>
+					<div class="col-md-4 form-group">
+						<input class="form-control" id="cardNumber" placeholder="16-digit Card #" data-type="number" data-toggle="tooltip" title="16-digit entry req'd" data-placement="bottom"/>
+					</div>
+					<div class="col-md-4"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-4"></div>
+					<div class="col-md-4">
+						<button class="btn btn-success btn-lg pull-right" type="button" ng-click="addUser(userInfo)">Submit</button>
+					</div>
+					<div class="col-md-4"></div>
+				</div>
+	    	</div>
+	    <div class="col-md-2"></div>
+    </div>
+  </form>
+</div>
